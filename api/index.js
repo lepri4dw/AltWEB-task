@@ -8,7 +8,10 @@ const usersRouter = require("./routers/users");
 const app = express();
 const port = 8000;
 
-app.use(cors());
+app.use(cors({
+  origin: process.env.FRONTEND_URL || 'http://localhost:3000',
+  credentials: true
+}));
 app.use(express.static('public'));
 app.use(express.json());
 app.use('/user', usersRouter);
