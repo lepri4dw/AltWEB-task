@@ -3,7 +3,7 @@ import {Avatar, Button, CircularProgress, Menu, MenuItem} from '@mui/material';
 import {useAppDispatch, useAppSelector} from '../../../app/hooks';
 import { logout } from '../../../features/users/usersThunks';
 import {selectLogoutLoading} from "../../../features/users/usersSlice";
-import {apiURL} from "../../../constants";
+import {API_URL} from "../../../constants";
 
 const UserMenu = ({user}) => {
   const dispatch = useAppDispatch();
@@ -28,7 +28,7 @@ const UserMenu = ({user}) => {
         onClick={handleClick}
         color="inherit"
       >
-        Hello, {user.displayName} <Avatar sx={{ml: 2}} src={apiURL + '/' + user.avatar} alt={user.email}/>
+        Hello, {user.displayName} <Avatar sx={{ml: 2}} src={API_URL + '/' + user.avatar} alt={user.email}/>
       </Button>
       <Menu
         anchorEl={anchorEl}

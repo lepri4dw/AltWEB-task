@@ -1,8 +1,8 @@
 import axios from 'axios';
-import {apiURL} from "./constants";
+import {API_URL} from "./constants";
 
 const axiosApi = axios.create({
-  baseURL: apiURL,
+  baseURL: API_URL,
 });
 
 export const addInterceptors = (store) => {
